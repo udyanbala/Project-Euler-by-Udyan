@@ -41,5 +41,24 @@ elif determiner == 1:
     base = int(input("What is the base of your number? "))
     exponent = int(input("What is the exponent of your number? "))
     print("Your summation is: ", summation_of_digits(base**exponent))
-else:
-    print("You have entered a wrong code. Please try again.")
+
+
+
+
+#Alternative by GEMINI
+def digit_sum(n: int) -> int:
+    s = str(abs(n))
+    return sum(int(ch) for ch in s)
+
+
+if __name__ == "__main__":
+    code = int(input("Enter 0 for a number or 1 for base^exponent: "))
+    if code == 0:
+        val = int(float(input("Enter number: ")))
+        print("Digit sum:", digit_sum(val))
+    elif code == 1:
+        base = int(input("Base: "))
+        exp = int(input("Exponent: "))
+        print("Digit sum:", digit_sum(base**exp))
+    else:
+        print("Invalid code.")
